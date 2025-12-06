@@ -3,6 +3,7 @@
 #include "src/pages/UsersPage.h"
 #include "src/pages/ItemsPage.h"
 #include "src/pages/CheckoutPage.h"
+#include "src/pages/OwnersPage.h"
 
 Dashboard::Dashboard(UsersDAO& usersDAO,
                      ItemsDAO& itemsDAO,
@@ -42,11 +43,16 @@ Dashboard::Dashboard(UsersDAO& usersDAO,
                                              m_checkoutDAO,
                                              m_usersDAO,
                                              this);
+    QWidget* ownersPage = new OwnersPage(m_personsDAO,
+                                         m_institutionsDAO,
+                                         this);
 
     registerPage("users", usersPage, "Usuarios");
     registerPage("items", itemsPage, "Items");
     registerPage("checkout", checkoutPage, "Retiro");
-    switchToPage("users");
+    registerPage("owners", ownersPage, "Responsables");
+
+    switchToPage("items");
 
     setupConnections();
 }
@@ -92,4 +98,5 @@ void Dashboard::setupConnections()
     connectPageButton(ui->usersButton, "users");
     connectPageButton(ui->itemsButton, "items");
     connectPageButton(ui->checkoutButton, "checkout");
+    connectPageButton(ui->ownersButton, "owners");
 }

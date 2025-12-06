@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>ToolTrack</string>
+   <string>AssetManager</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
@@ -78,6 +78,13 @@
        </widget>
       </item>
       <item>
+       <widget class="QPushButton" name="itemsButton">
+        <property name="text">
+         <string>Items</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QPushButton" name="usersButton">
         <property name="text">
          <string>Usuarios</string>
@@ -85,9 +92,30 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="itemsButton">
+       <widget class="Line" name="line">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="ownersButton">
         <property name="text">
-         <string>Items</string>
+         <string>Responsables</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="metadataButton">
+        <property name="text">
+         <string>Metadata</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="Line" name="line_2">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
         </property>
        </widget>
       </item>
@@ -95,6 +123,12 @@
     </item>
     <item row="0" column="0" colspan="2">
      <widget class="QLabel" name="titleLabel">
+      <property name="font">
+       <font>
+        <pointsize>24</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="text">
        <string>Título</string>
       </property>

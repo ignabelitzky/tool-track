@@ -49,7 +49,7 @@ void UsersPage::onNewUserClicked()
 void UsersPage::onEditUserClicked()
 {
     int userId = getSelectedUserId();
-    if (userId < 0)
+    if (userId <= 0)
         return;
 
     NewUserDialog dialog(m_usersDAO, this);
@@ -65,7 +65,7 @@ void UsersPage::onEditUserClicked()
 void UsersPage::onDeleteUserClicked()
 {
     int userId = getSelectedUserId();
-    if (userId < 0)
+    if (userId <= 0)
         return;
 
     if (QMessageBox::question(this, "Eliminar usuario", "¿Está seguro que desea eliminar este usuario?") == QMessageBox::Yes)
